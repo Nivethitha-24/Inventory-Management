@@ -27,7 +27,7 @@ pipeline {
                     $class: 'GitSCM',
                     branches: [[name: 'main']],
                     userRemoteConfigs: [[
-                        url: 'https://github.com/Shandeepsugumar/online-learning-platform.git',
+                        url: 'https://github.com/Nivethitha-24/Inventory-Management',
                         credentialsId: 'github-credentials-id'
                     ]]
                 ])
@@ -53,7 +53,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'docker-hub-credential', variable: 'DOCKER_HUB_TOKEN')]) {
                         sh '''
                             echo "🔐 Logging in to Docker Hub..."
-                            echo "$DOCKER_HUB_TOKEN" | docker login -u "shandeep04" --password-stdin
+                            echo "$DOCKER_HUB_TOKEN" | docker login -u "nivethitha24" --password-stdin
                             echo "🚀 Pushing Docker Image: ${DOCKER_IMAGE}..."
                             docker push ${DOCKER_IMAGE}
                             echo "✅ Docker Image Push Successful!"
