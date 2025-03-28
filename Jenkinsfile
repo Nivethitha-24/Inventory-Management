@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = ""
+        DOCKER_IMAGE = "nivethitha24/project:latest"
         K8S_DEPLOYMENT = "k8s/doctor-app-deployment.yaml"
         K8S_SERVICE = "k8s/doctor-app-service.yaml"
         PROMETHEUS_DEPLOYMENT = "k8s/prometheus-deployment.yaml"
