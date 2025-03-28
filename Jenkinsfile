@@ -72,7 +72,7 @@ pipeline {
                         echo "🔧 Setting Up Minikube Environment..."
                         
                         export MINIKUBE_HOME=/var/lib/jenkins/.minikube
-                        export KUBECONFIG=/var/lib/jenkins/.kube/config
+                        export KUBECONFIG=/home/nivethitha/.kube/config
 
                         echo "🔧 Fixing Minikube Profile Directory Permissions..."
                         sudo chown -R jenkins:jenkins $MINIKUBE_HOME || true
@@ -103,7 +103,7 @@ pipeline {
                 script {
                     echo "📊 Deploying Prometheus and Grafana..."
                     sh '''
-                        export KUBECONFIG=/var/lib/jenkins/.kube/config
+                        export KUBECONFIG=/home/nivethitha/.kube/config
                         
                         echo "📌 Applying Prometheus Config..."
                         kubectl apply -f ${PROMETHEUS_CONFIG}
