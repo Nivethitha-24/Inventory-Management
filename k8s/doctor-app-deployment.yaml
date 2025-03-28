@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doctor-app
+  labels:
+    app: doctor-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doctor-app
+  template:
+    metadata:
+      labels:
+        app: doctor-app
+    spec:
+      containers:
+        - name: doctor-app
+          image: shandeep04/docker_jenkins_task2:latest
+          ports:
+            - containerPort: 4000
+          env:
+            - name: MONGO_URI
+              value: "mongodb://localhost:27017/coderone"
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
