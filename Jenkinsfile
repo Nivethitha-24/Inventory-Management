@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "shandeep04/docker_jenkins_task2:latest"
+        DOCKER_IMAGE = ""
         K8S_DEPLOYMENT = "k8s/doctor-app-deployment.yaml"
         K8S_SERVICE = "k8s/doctor-app-service.yaml"
         PROMETHEUS_DEPLOYMENT = "k8s/prometheus-deployment.yaml"
         PROMETHEUS_CONFIG = "k8s/prometheus-configmap.yaml"
         GRAFANA_DEPLOYMENT = "k8s/grafana-deployment.yaml"
-        KUBECONFIG = "/home/shandeep/.kube/config"
+        KUBECONFIG = "/home/nivethitha/.kube/config"
         WORK_DIR = "${WORKSPACE}"
     }
 
